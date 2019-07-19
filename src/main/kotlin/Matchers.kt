@@ -9,7 +9,7 @@ fun matchByRegex(remaining: String, regex: Regex, out: (String) -> Token): Pair<
     return Pair(token, parsed)
 }
 
-fun parseByMatchers(matchers: List<Matcher>, string: String, parsed: List<Token> = emptyList()): List<Token> {
+tailrec fun parseByMatchers(matchers: List<Matcher>, string: String, parsed: List<Token> = emptyList()): List<Token> {
     if (string.count() == 0) return parsed
 
     for (matcher in matchers) {
