@@ -19,7 +19,7 @@ fun matchMultipleByRegex(remaining: String, regex: Regex, out: (MatchResult) -> 
 }
 
 tailrec fun parseByMatchers(matchers: List<Matcher>, string: String, parsed: List<Token> = emptyList()): List<Token> {
-    if (string.count() == 0) return parsed
+    if (string.isEmpty()) return parsed
 
     for (matcher in matchers) {
         val (tok, rem) = matcher(string)
