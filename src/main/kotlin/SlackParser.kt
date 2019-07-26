@@ -1,6 +1,6 @@
 
 
-sealed class Token() {
+sealed class Token {
     abstract fun out(): String
 
     class Literal(val content: String) : Token() {
